@@ -4,9 +4,11 @@ import "./style.scss";
 const Country = () => {
   return (
     <div className="country">
-      <div className="country-title">title</div>
-      <div className="country-content">content</div>
-      <div className="country-action">action</div>
+      <div className="country-title">USA</div>
+      <div className="country-content">
+        <div>New confirmed: 234234</div>
+        <div>Total confirmed: 234234</div>
+      </div>
     </div>
   );
 };

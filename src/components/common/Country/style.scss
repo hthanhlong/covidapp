@@ -1,4 +1,31 @@
 .country {
-    padding: 5px;
-    width: 25%;
+  padding: 12px;
+  margin: 5px;
+  width: 24%;
+
+  border: 1px solid grey;
+  border-radius: 8px;
+
+  background-color: rgb(234, 252, 255);
+
+  &-title {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  &-content {
+    line-height: 22px;
+  }
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background: rgb(234, 252, 255);
+    background: radial-gradient(
+      circle,
+      rgba(234, 252, 255, 1) 0%,
+      rgba(124, 104, 226, 1) 100%
+    );
+  }
 }

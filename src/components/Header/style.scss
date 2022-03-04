@@ -1,4 +1,4 @@
-@import "../../scss/variable";
+@import "../../scss/variables";
 
 header {
   width: 100%;
@@ -19,21 +19,23 @@ header {
     text-transform: uppercase;
   }
   li {
-    font-weight: 400;
-    padding: 5px 22px;
-    color: antiquewhite;
-    transition: all 0.2s;
+    a {
+      font-weight: 400;
+      padding: 5px 22px;
+      color: antiquewhite !important;
+      transition: all 0.2s;
 
-    &:hover {
-      color: black;
-      cursor: pointer;
-      background-color: $color-background;
+      &:hover {
+        color: black !important;
+        cursor: pointer;
+        background-color: $color-background;
+      }
     }
   }
 
   &-brand {
-      font-size: 30px;
-      font-weight: 700;
-      color: white;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
   }
 }

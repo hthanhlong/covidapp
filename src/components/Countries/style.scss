@@ -1,12 +1,21 @@
 .countries {
-  background-color: #b1b1c5;
+  background: linear-gradient(
+    180deg,
+    rgba(146, 151, 169, 1) 25%,
+    rgba(252, 252, 252, 1) 100%
+  );
   &-title {
-    padding: 15px 0;
-    border-bottom: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid white;
+    color: white;
   }
+
   &-list {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 10px;
+    padding: 40px 0;
   }
 }

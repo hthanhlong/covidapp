@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 import Hero from "../Hero";
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,9 +11,15 @@ const Header = () => {
           <div className="header-brand">VAND</div>
           <nav className="header-nav">
             <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Blog</li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
             </ul>
           </nav>
         </div>

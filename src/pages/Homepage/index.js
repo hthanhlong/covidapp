@@ -1,6 +1,5 @@
 import React from "react";
 import { Countries } from "../../components/Countries";
-import Hero from "../../components/Hero";
 import Infor from "../../components/Info";
 import "./style.scss";
 
