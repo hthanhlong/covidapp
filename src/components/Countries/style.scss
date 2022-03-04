@@ -1,0 +1,12 @@
+.countries {
+  background-color: #b1b1c5;
+  &-title {
+    padding: 15px 0;
+    border-bottom: 1px solid red;
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+}
