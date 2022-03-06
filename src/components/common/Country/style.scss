@@ -1,4 +1,6 @@
 .country {
+  display: flex;
+  flex-direction: column;
   padding: 12px;
   margin: 5px;
   width: 24%;
@@ -8,6 +10,8 @@
 
   background-color: rgb(234, 252, 255);
 
+  transition: all 0.2s linear;
+
   &-title {
     text-align: center;
     text-transform: uppercase;
@@ -16,12 +20,12 @@
   }
 
   &-content {
+    margin-top: auto;
     line-height: 22px;
   }
   &:hover {
     cursor: pointer;
     color: white;
-    background: rgb(234, 252, 255);
     background: radial-gradient(
       circle,
       rgba(234, 252, 255, 1) 0%,

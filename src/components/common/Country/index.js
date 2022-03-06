@@ -1,13 +1,16 @@
 import React from "react";
 import "./style.scss";
+import { numberCommas } from "../../../utils";
 
-const Country = ({country}) => {
+const Country = ({ order, country, newConfirmed, totalConfirmed }) => {
   return (
     <div className="country">
-      <div className="country-title">{country}</div>
+      <div className="country-title">
+        {order}.{country}
+      </div>
       <div className="country-content">
-        <div>New confirmed: 234234</div>
-        <div>Total confirmed: 234234</div>
+        <div>New confirmed: {numberCommas(newConfirmed) || 0}</div>
+        <div>Total confirmed: {numberCommas(totalConfirmed) || 0}</div>
       </div>
     </div>
   );

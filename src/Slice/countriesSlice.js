@@ -15,7 +15,11 @@ const initialState = {
 export const countriesSlice = createSlice({
   name: "list country",
   initialState,
-  reducers: {},
+  reducers: {
+    sortHeighest: (state) => {
+      console.log("hello world");
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCountries.fulfilled, (state, action) => {
       state.countries = action.payload.Countries;
@@ -24,5 +28,7 @@ export const countriesSlice = createSlice({
     });
   },
 });
+
+export const { sortHeighest } = countriesSlice.actions
 
 export default countriesSlice.reducer;

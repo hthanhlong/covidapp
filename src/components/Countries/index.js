@@ -7,7 +7,6 @@ import { fetchCountries } from "../../Slice/countriesSlice";
 
 export const Countries = () => {
   const countries = useSelector((state) => state.countries.countries);
-  console.log("countries", countries);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,8 +27,14 @@ export const Countries = () => {
         </div>
         <div className="countries-list">
           {countries &&
-            countries.map((item) => (
-              <Country key={item.ID} country={item.Country} />
+            countries.map((item, index) => (
+              <Country
+                order={index + 1}
+                key={item.ID}
+                country={item.Country}
+                newConfirmed={item.NewConfirmed}
+                totalConfirmed={item.TotalConfirmed}
+              />
             ))}
         </div>
       </div>

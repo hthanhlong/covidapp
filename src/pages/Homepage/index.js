@@ -1,6 +1,7 @@
 import React from "react";
 import { Countries } from "../../components/Countries";
-import Infor from "../../components/Info";
+import Infor from "components/Info";
+// import Modal from "components/common/Modal";
 import "./style.scss";
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
     <div className="Home">
       <Infor />
       <Countries />
+      {/* <Modal /> */}
     </div>
   );
 };
