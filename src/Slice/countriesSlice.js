@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { sortbyText } from "utils";
 import { countries } from "../api/countriesApi";
 
 export const fetchCountries = createAsyncThunk("countries", async () => {
@@ -16,8 +17,23 @@ export const countriesSlice = createSlice({
   name: "list country",
   initialState,
   reducers: {
-    sortHeighest: (state) => {
-      console.log("hello world");
+    sortHeighest: (state, action) => {
+      // eslint-disable-next-line default-case
+      switch (action.payload) {
+        case 0:
+          state.countries.sort((a, b) => {
+            return a.Country < b.Country ? -1 : 1;
+          });
+          break;
+        // eslint-disable-next-line no-duplicate-case
+        case 1:
+          state.countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
+          break;
+        // eslint-disable-next-line no-fallthrough
+        case 2:
+          state.countries.sort((a, b) => b.NewDeaths - a.NewDeaths);
+          break;
+      }
     },
   },
   extraReducers: (builder) => {
@@ -29,6 +45,6 @@ export const countriesSlice = createSlice({
   },
 });
 
-export const { sortHeighest } = countriesSlice.actions
+export const { sortHeighest } = countriesSlice.actions;
 
 export default countriesSlice.reducer;

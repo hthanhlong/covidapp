@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sortHeighest } from "Slice/countriesSlice";
 import "./style.scss";
 
 const Sort = () => {
+  const dispatch = useDispatch();
   const handleOnchangeSelect = (e) => {
+    dispatch(sortHeighest(Number(e.target.value)));
     console.log("first", e.target.value);
   };
 
@@ -14,7 +18,7 @@ const Sort = () => {
     <div className="sort">
       <label className="sort-label">Sort:</label>
       <select className="sort-select" onChange={(e) => handleOnchangeSelect(e)}>
-        <option value="">Default</option>
+        <option value="0">Default</option>
         <option value="1">
           Highest to lowest number total confirmed cases
         </option>

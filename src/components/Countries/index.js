@@ -18,6 +18,10 @@ export const Countries = () => {
     }
   }, []);
 
+  if (!countries.length) {
+    return <div>...loading</div>;
+  }
+
   return (
     <div className="countries">
       <div className="wrapper">
@@ -34,6 +38,7 @@ export const Countries = () => {
                 country={item.Country}
                 newConfirmed={item.NewConfirmed}
                 totalConfirmed={item.TotalConfirmed}
+                totalDeaths={item.TotalDeaths}
               />
             ))}
         </div>
