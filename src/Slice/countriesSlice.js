@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { sortbyText } from "utils";
 import { countries } from "../api/countriesApi";
 
 export const fetchCountries = createAsyncThunk("countries", async () => {
