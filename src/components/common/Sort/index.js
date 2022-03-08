@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { sortHeighest } from "Slice/countriesSlice";
 import "./style.scss";
 
@@ -7,12 +7,7 @@ const Sort = () => {
   const dispatch = useDispatch();
   const handleOnchangeSelect = (e) => {
     dispatch(sortHeighest(Number(e.target.value)));
-    console.log("first", e.target.value);
   };
-
-  useEffect(() => {
-    // handleOnchangeSelect();
-  }, []);
 
   return (
     <div className="sort">

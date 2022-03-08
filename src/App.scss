@@ -1,16 +1,13 @@
 @import "./scss/base";
 
 .app {
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
+  
 }
 
 .wrapper {
-  width: 100%;
-  padding: 0 15px;
-}
-
-.wrapper {
+  max-width: 100%;
   padding: 0 15px;
 }
 
@@ -27,6 +24,7 @@ ul {
 }
 
 img {
+  max-width: 100%;
   border-style: none;
   border: 0;
 }

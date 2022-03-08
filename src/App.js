@@ -6,6 +6,7 @@ import HomePage from "./pages/Homepage";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import GoToTop from "components/common/GoToTop";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <GoToTop />
       </div>
     </div>
   );

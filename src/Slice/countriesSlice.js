@@ -40,7 +40,7 @@ export const countriesSlice = createSlice({
     builder.addCase(fetchCountries.fulfilled, (state, action) => {
       state.countries = action.payload.Countries;
       state.global = action.payload.Global;
-      state.date = action.payload.Date.split("T")[0];
+      state.date = action.payload.Date && action.payload.Date.split("T")[0];
     });
   },
 });

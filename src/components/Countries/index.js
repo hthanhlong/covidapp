@@ -14,11 +14,11 @@ export const Countries = () => {
       const action = fetchCountries();
       dispatch(action);
     } catch (error) {
-      throw Error(error);
+      console.log(error);
     }
   }, []);
 
-  if (!countries.length) {
+  if (countries && !countries.length) {
     return <div>...loading</div>;
   }
 
@@ -39,6 +39,8 @@ export const Countries = () => {
                 newConfirmed={item.NewConfirmed}
                 totalConfirmed={item.TotalConfirmed}
                 totalDeaths={item.TotalDeaths}
+                countryCode={item.CountryCode}
+                slug={item.Slug}
               />
             ))}
         </div>

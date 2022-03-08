@@ -18,7 +18,7 @@ const Infor = () => {
         <div className="infoitem">
           <div className="infoitem-header">{InfoTemlate.newCases}</div>
           <div className="infoitem-number">
-            {numberCommas(global.NewConfirmed)}
+            {global && global.NewConfirmed && numberCommas(global.NewConfirmed)}
           </div>
           <div>
             Source:{" "}
@@ -35,7 +35,7 @@ const Infor = () => {
         <div className="infoitem">
           <div className="infoitem-header">{InfoTemlate.totalCases}</div>
           <div className="infoitem-number">
-            {numberCommas(global.TotalConfirmed)}
+            {global &&  global.TotalConfirmed && numberCommas(global.TotalConfirmed)}
           </div>
           <div>
             Source:{" "}
@@ -52,7 +52,7 @@ const Infor = () => {
         <div className="infoitem">
           <div className="infoitem-header">{InfoTemlate.totalDeaths}</div>
           <div className="infoitem-number">
-            {numberCommas(global.TotalDeaths)}
+            {global &&  global.TotalDeaths && numberCommas(global.TotalDeaths)}
           </div>
           <div>
             Source:{" "}
