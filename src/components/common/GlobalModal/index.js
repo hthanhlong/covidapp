@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "Slice/ModalSlice";
@@ -6,18 +6,30 @@ import { numberCommas } from "utils";
 import { LineChart, Line, XAxis, YAxis } from "recharts";
 
 const GlobalModal = () => {
+  const ref = useRef(null);
   const dispatch = useDispatch();
-
   const isShow = useSelector((state) => state.modalDetail.isShow);
   const isFetch = useSelector((state) => state.modalDetail.isFetch);
   const detailCountry = useSelector((state) => state.modalDetail.detailCountry);
   const dataDaily = useSelector((state) => state.modalDetail.dataDaily);
 
-  const handleCloseModal = (e) => {
-    dispatch(closeModal());
-  };
+  const handleCloseModal = useCallback((e) => {
+    if (
+      e.target.className === "modal-close-btn" ||
+      (ref.current && !ref.current.contains(e.target))
+    ) {
+      dispatch(closeModal());
+    }
+  }, []);
 
-  if (!detailCountry || isFetch || !dataDaily) return null;
+  useEffect(() => {
+    document.addEventListener("click", handleCloseModal);
+    return () => {
+      document.removeEventListener("click", handleCloseModal);
+    };
+  }, []);
+
+  if (isFetch || !detailCountry) return null;
 
   const {
     name: { common },
@@ -37,7 +49,7 @@ const GlobalModal = () => {
   );
 
   return (
-    <div className={`modal ${isShow ? "modal-show" : ""}`}>
+    <div ref={ref} className={`modal ${isShow ? "modal-show" : ""}`}>
       <div className="modal-close">
         <button
           onClick={(e) => handleCloseModal(e)}
