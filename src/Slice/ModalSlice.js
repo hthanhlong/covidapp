@@ -21,7 +21,7 @@ export const fetchDetailDataDaily = createAsyncThunk(
 );
 
 const initialState = {
-  isFetch: false,
+  isFetch: false, 
   isShow: false,
   detailCountry: null,
   dataDaily: null,
@@ -33,6 +33,8 @@ export const modalSlice = createSlice({
   reducers: {
     closeModal: (state) => {
       state.isShow = false;
+      state.detailCountry = null;
+      state.dataDaily = null;
     },
   },
   extraReducers: (builder) => {
@@ -45,8 +47,7 @@ export const modalSlice = createSlice({
         state.isFetch = false;
         state.detailCountry = action.payload[0];
       })
-      .addCase(fetchDetailCountry.rejected, (state, action) => {
-      })
+      .addCase(fetchDetailCountry.rejected, (state, action) => {})
       .addCase(fetchDetailDataDaily.fulfilled, (state, action) => {
         state.dataDaily = action.payload;
       });
