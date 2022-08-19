@@ -1,4 +1,1 @@
-abc
-add 123
-
-add 456
+commit 1
